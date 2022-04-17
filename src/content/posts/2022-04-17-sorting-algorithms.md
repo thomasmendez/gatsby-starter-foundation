@@ -5,6 +5,12 @@ slug: algorithms-sort
 date: 2022-04-17 14:16
 description: Sorting Algorithms
 ---
+**Heap Sort**
+
+
+
+
+
 **Merge Sort**
 
 Description: Divide and Conquer Algorithm 
@@ -32,7 +38,7 @@ Pseudocode for Merge Sort:
   * Let i, j, k be variables to keep track of left, right, original passed in array respectively
   * Create a while loop that will compare left and right arrays
 
-    * If left is greater than right (array will decrement, largest first, smallest last. Inverse it by checking if left is smaller than right)
+    * If left is less than right (array will increment, smallest first, largest last. Inverse it by checking if left is smaller greater right)
 
       * Have original array at index k equal to left at index i
       * Increment i (also k)
@@ -50,8 +56,6 @@ Pseudocode for Merge Sort:
     * While j is less than the length of the right array
     * Continue to move items to the original array from the right array
     * Increment j and k
-
-
 
 ```
 def merge_sort(self, array):
