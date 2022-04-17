@@ -31,6 +31,51 @@ Pseudocode for Heap Sort:
     * For loop starts with length of array - 1 and decrement till you reach 0
     * Swap last element with first
     * Call heapify by passing in rooted subtree at index 0
+* Create heapify function
+
+  * Heapify takes in an array, n is the size of the heap, a subtree rooted at index i
+  * Initialize largest as root
+  * Left is 2 * i + 1
+  * Right is 2 * i + 2
+  * Check if left child of the root exist (see if it is in range of n) and is it greater than the root
+
+    * if it is, set largest equal to the left 
+  * Check if right child of the root exist (see if it is in range of n) and is it greater than the root
+
+    * if it is, set largest equal to the right
+  * If it changed (largest does not equal i no more)
+
+    * Swap the item with the index at the largest value with the item in the current i value
+    * Heapify the root, at index largest
+
+Python Code:
+
+```
+def heapSort(self, array: List[int]):
+  n = len(array)
+  
+  for i in range(n // 2 - 1, -1, -1):
+    heapify(array, n, i)
+  for i in range(n-1, 0, -1):
+    array[0], array[i] = array[i], array[0]
+    heapify(array, i, 0)
+
+def heapify(array: List[int], n: int, i: int): -> None
+  largest = i
+  left = 2 * i + 1
+  right = 2 * i + 2
+  
+  if (left < n) and (array[left] > array[largest]):
+    largest = left
+  
+  if (right < n) and (array[right] > array[largest]):
+    largest = right
+    
+  if (largest != i):
+    array[i], array[largest] = array[largest], array[i]
+    heapify(array, n, largest)
+  
+```
 
 
 
@@ -79,6 +124,8 @@ Pseudocode for Merge Sort:
     * While j is less than the length of the right array
     * Continue to move items to the original array from the right array
     * Increment j and k
+
+Python Code:
 
 ```
 def merge_sort(self, array):
