@@ -7,7 +7,30 @@ description: Sorting Algorithms
 ---
 **Heap Sort**
 
+Description: Comparison based sorting, similar to selection sort where we first find the maximum element and place the maximum element at the end
 
+Time Complexity: 
+
+* Best: O(n * log(n))
+* Worse: O(n * log(n))
+
+Space Complexity:
+
+* Best: O(1)
+* Worse: O(1)
+
+Pseudocode for Heap Sort:
+
+* Create main heap sort function
+
+  * Build the max heap using a for loop with heapify
+
+    * For loop starts from half of the size of the array minus one for the root, decrement until -1 to include 0
+  * Extract elements one at a time using a for loop with heapify
+
+    * For loop starts with length of array - 1 and decrement till you reach 0
+    * Swap last element with first
+    * Call heapify by passing in rooted subtree at index 0
 
 
 
